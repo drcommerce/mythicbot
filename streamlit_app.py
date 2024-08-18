@@ -56,7 +56,7 @@ if prompt := st.chat_input("What is up?"):
 
     # Display the response using `st.write`.
     with st.chat_message("assistant"):
-        st.write(response.txt)
+        st.write(response.text)
 
     # Store the response in session state (optional)
     # st.session_state.messages.append({"role": "assistant", "content": response})
