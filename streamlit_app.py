@@ -55,11 +55,11 @@ if prompt := st.chat_input("What is up?"):
 
     # Display the response using `st.write`.
     with st.chat_message("assistant"):
-    try:
-        response = call_vext_api(prompt)
-        st.write(response)
-    except Exception as e:
-        st.write(f"Error: {e}")
+        try:
+            response = call_vext_api(prompt)
+            st.write(response)
+        except Exception as e:
+            st.write(f"Error: {e}")
 
     # Store the response in session state (optional)
     # st.session_state.messages.append({"role": "assistant", "content": response})
