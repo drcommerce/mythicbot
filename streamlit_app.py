@@ -6,17 +6,26 @@ import json
 API_KEY = "2GxdA3IT.2RIPThfls0aRk35SESK16n0KHouq4y1t"
 URL = "https://payload.vextapp.com/hook/48PJ2KFJVI/catch/ML"
 
+
 def call_vext_api(payload):
     """
-    Function to call the Vext RAG model API using requests.
+    Function to call the Vext RAG model API using requests,
+    with error handling for the response.
     """
     headers = {"Content-Type": "application/json", "Apikey": f"Api-Key {API_KEY}"}
     data = {"payload": payload}
     response = requests.post(URL, headers=headers, json=data)
+
     if response.status_code == 200:
-        return response.json()["response"]
+        try:
+            # Attempt to access the "response" key
+            return response.json()["response"]
+        except KeyError:
+            # Handle the case where "response" key is missing
+            return "Error: Unexpected response format from Vext API."
     else:
         return f"Error: {response.status_code}"
+
 
 # Show title and description.
 st.title(" Chatbot")
@@ -47,7 +56,7 @@ if prompt := st.chat_input("What is up?"):
 
     # Display the response using `st.write`.
     with st.chat_message("assistant"):
-        st.write(response)
+        st.write(response.txt)
 
     # Store the response in session state (optional)
     # st.session_state.messages.append({"role": "assistant", "content": response})
