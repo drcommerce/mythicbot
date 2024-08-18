@@ -43,6 +43,9 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
+# Append the new message to the session state
+st.session_state.messages.append({"role": "assistant", "content": response})
+
 # Create a chat input field to allow the user to enter a message.
 if prompt := st.chat_input("What is up?"):
 
