@@ -30,7 +30,7 @@ def call_vext_api(payload):
 # Show title and description.
 st.title(" Chatbot")
 st.write(
-    "1. This is a simple chatbot that uses your Vext Retrieval-Augmented Generation (RAG) model. "
+    "2. This is a simple chatbot that uses your Vext Retrieval-Augmented Generation (RAG) model. "
     "Ensure you have the Vext RAG model API running and accessible."
 )
 
