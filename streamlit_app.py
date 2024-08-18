@@ -29,8 +29,9 @@ def call_vext_api(payload):
 # Show title and description.
 st.title(" Chatbot")
 st.write(
-    "4. This is a simple chatbot that uses your Vext Retrieval-Augmented Generation (RAG) model. "
-    "Ensure you have the Vext RAG model API running and accessible."
+    "This is a chatbot that uses Facebook's opensource Llama LLM to generate answer questions about Mythic Legions Action Figures. "
+    "To use this app, Simply ask a question about Mythic Legions and wait for a response. "
+    "For example, you can ask: "Who are the four horsemen in mythic legions?" or "Tell me a story that takes place in the lands of Mythic Legions."
 )
 
 # Create a session state variable to store the chat messages.
