@@ -29,9 +29,9 @@ def call_vext_api(payload):
 # Show title and description.
 st.title(" Chatbot")
 st.write(
-    "This is a chatbot that uses Facebook's opensource Llama LLM to generate answer questions about Mythic Legions Action Figures. "
-    "To use this app, Simply ask a question about Mythic Legions and wait for a response. "
-    "For example, you can ask: 'Who are the four horsemen in mythic legions?' or 'Tell me a story that takes place in the lands of Mythos."
+    "This is a chatbot that uses Facebook's opensource Llama LLM to generate answer questions about Mythic Legions Action Figures. \n"
+    "\nTo use this app, Simply ask a question about Mythic Legions and wait for a response. \n"
+    "\nFor example, you can ask: 'Who are the four horsemen in mythic legions?' or 'Tell me a story that takes place in the lands of Mythos.'"
 )
 
 # Create a session state variable to store the chat messages.
