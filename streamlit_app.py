@@ -66,4 +66,4 @@ if prompt := st.chat_input("What is up?"):
             st.write(f"Error: {e}")
 
     # Store the response in session state (optional)
-    # st.session_state.messages.append({"role": "assistant", "content": response})
+    st.session_state.messages.append({"role": "assistant", "content": response})
