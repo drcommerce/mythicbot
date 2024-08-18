@@ -27,7 +27,7 @@ def call_vext_api(payload):
 
 
 # Show title and description.
-st.title(" Chatbot")
+st.title("Mythos Chatbot")
 st.write(
     "This is a chatbot that uses Facebook's opensource Llama LLM to generate answer questions about Mythic Legions Action Figures. \n"
     "\nTo use this app, Simply ask a question about Mythic Legions and wait for a response. \n"
