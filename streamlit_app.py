@@ -18,10 +18,9 @@ def call_vext_api(payload):
 
     if response.status_code == 200:
         try:
-            # Attempt to access the "response" key
-            return response.json()["response"]
+            # Access the text under the "text" key
+            return response.json()["text"]
         except KeyError:
-            # Handle the case where "response" key is missing
             return "Error: Unexpected response format from Vext API."
     else:
         return f"Error: {response.status_code}"
@@ -30,7 +29,7 @@ def call_vext_api(payload):
 # Show title and description.
 st.title(" Chatbot")
 st.write(
-    "2. This is a simple chatbot that uses your Vext Retrieval-Augmented Generation (RAG) model. "
+    "4. This is a simple chatbot that uses your Vext Retrieval-Augmented Generation (RAG) model. "
     "Ensure you have the Vext RAG model API running and accessible."
 )
 
@@ -56,7 +55,11 @@ if prompt := st.chat_input("What is up?"):
 
     # Display the response using `st.write`.
     with st.chat_message("assistant"):
-        st.write(response.text)
+    try:
+        response = call_vext_api(prompt)
+        st.write(response)
+    except Exception as e:
+        st.write(f"Error: {e}")
 
     # Store the response in session state (optional)
     # st.session_state.messages.append({"role": "assistant", "content": response})
