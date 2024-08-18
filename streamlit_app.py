@@ -44,7 +44,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Append the new message to the session state
-st.session_state.messages.append({"role": "assistant", "content": response})
+# st.session_state.messages.append({"role": "assistant", "content": response})
 
 # Create a chat input field to allow the user to enter a message.
 if prompt := st.chat_input("What is up?"):
@@ -62,7 +62,7 @@ if prompt := st.chat_input("What is up?"):
         try:
             response = call_vext_api(prompt)
             st.write(response)
-            #st.session_state.messages.append({"role": "assistant", "content": response})
+            st.session_state.messages.append({"role": "assistant", "content": response})
         except Exception as e:
             st.write(f"Error: {e}")
 
